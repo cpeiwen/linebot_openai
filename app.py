@@ -11,7 +11,7 @@ from linebot.models import *
 #======python的函數庫==========
 import tempfile, os
 import datetime
-import openai from OpenAI
+from openai import OpenAI
 import time
 import traceback
 #======python的函數庫==========
