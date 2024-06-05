@@ -27,9 +27,10 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI()
-def GPT_response(text):
+def GPT_response_fine_tune(text):
     # 接收回應
-    response = openai.chat.completions.create(
+    client = OpenAI(api_key = OPENAI_API_KEY)
+    response = client.chat.completions.create(
         model="ft:gpt-3.5-turbo-0125:personal::9W3308eS", 
         messages = [
             {"role": "sysyem", "content": "你是一個了解時下流行穿搭的時尚達人，會根據使用者提出的需求或問題給予相關建議"},
