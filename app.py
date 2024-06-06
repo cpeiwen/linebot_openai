@@ -12,7 +12,7 @@ from linebot.models import *
 import tempfile, os
 import datetime
 import openai
-from openai import OpenAI, OpenAIError
+from openai import OpenAI
 import time
 import traceback
 #======python的函數庫==========
@@ -27,9 +27,8 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI()
-def GPT_response_fine_tune(text):
+def GPT_response(text):
     # 接收回應
-    client = OpenAI(api_key = OPENAI_API_KEY)
     response = client.chat.completions.create(
         model="ft:gpt-3.5-turbo-0125:personal::9W3308eS", 
         messages = [
