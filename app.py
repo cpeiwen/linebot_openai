@@ -32,7 +32,7 @@ def GPT_response(text):
     response = client.chat.completions.create(
         model="ft:gpt-3.5-turbo-0125:personal::9W3308eS", 
         messages = [
-            {"role": "sysyem", "content": "你是一個了解時下流行穿搭的時尚達人，會根據使用者提出的需求或問題給予相關建議"},
+            {"role": "system", "content": "你是一個了解時下流行穿搭的時尚達人，會根據使用者提出的需求或問題給予相關建議"},
             {"role": "user", "content": text}
         ],
         max_tokens=150,
