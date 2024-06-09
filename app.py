@@ -36,7 +36,7 @@ def GPT_response(text):
             {"role": "user", "content": text}
         ],
         max_tokens=150,
-        temperature = 0.5
+        temperature = 0.2
     )
     # 重組回應
     return response.choices[0].message.content
